@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ActionView" customModule="TextEditor" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3sH-Vc-pFa">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ij1-79-Ivw">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="Oj0-Zd-3Td"/>
+                    </constraints>
+                    <state key="normal" image="undo_active"/>
+                    <state key="disabled" image="undo"/>
+                    <connections>
+                        <action selector="redo:" destination="iN0-l3-epB" eventType="touchUpInside" id="BKZ-Nc-sbu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3x-ma-Ld2">
+                    <rect key="frame" x="50" y="0.0" width="50" height="44"/>
+                    <state key="normal" image="redo_active"/>
+                    <state key="disabled" image="redo"/>
+                    <connections>
+                        <action selector="undo:" destination="iN0-l3-epB" eventType="touchUpInside" id="sHr-bZ-91l"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myu-5A-smB">
+                    <rect key="frame" x="325" y="0.0" width="50" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="1Ry-ep-e18"/>
+                    </constraints>
+                    <state key="normal" image="hide_keyboard"/>
+                    <connections>
+                        <action selector="hideKeyboard:" destination="iN0-l3-epB" eventType="touchUpInside" id="HTN-Ie-0u5"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWb-ow-myY">
+                    <rect key="frame" x="275" y="0.0" width="50" height="44"/>
+                    <state key="normal" image="text_icon_active"/>
+                    <state key="selected" image="text_icon"/>
+                    <connections>
+                        <action selector="showAttributes:" destination="iN0-l3-epB" eventType="touchUpInside" id="sJk-vE-MYf"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3X-8K-k45">
+                    <rect key="frame" x="225" y="0.0" width="50" height="44"/>
+                    <state key="normal" image="attach_icon_active"/>
+                    <state key="selected" image="attach_icon_active"/>
+                    <connections>
+                        <action selector="attachFiles:" destination="iN0-l3-epB" eventType="touchUpInside" id="h0W-UT-Sqx"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Ij1-79-Ivw" secondAttribute="bottom" id="C0k-ci-suI"/>
+                <constraint firstItem="p3x-ma-Ld2" firstAttribute="leading" secondItem="Ij1-79-Ivw" secondAttribute="trailing" id="J4i-al-F6i"/>
+                <constraint firstItem="p3x-ma-Ld2" firstAttribute="top" secondItem="Ij1-79-Ivw" secondAttribute="top" id="JNT-RD-3K2"/>
+                <constraint firstItem="3sH-Vc-pFa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JpE-5u-D0v"/>
+                <constraint firstItem="p3x-ma-Ld2" firstAttribute="bottom" secondItem="Ij1-79-Ivw" secondAttribute="bottom" id="KPe-xz-5q2"/>
+                <constraint firstItem="3sH-Vc-pFa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NVC-6m-wdk"/>
+                <constraint firstItem="CWb-ow-myY" firstAttribute="leading" secondItem="x3X-8K-k45" secondAttribute="trailing" id="SlO-lf-nDC"/>
+                <constraint firstItem="CWb-ow-myY" firstAttribute="width" secondItem="myu-5A-smB" secondAttribute="width" id="Tbu-vv-qnd"/>
+                <constraint firstAttribute="trailing" secondItem="3sH-Vc-pFa" secondAttribute="trailing" id="cFk-Od-Pnf"/>
+                <constraint firstItem="x3X-8K-k45" firstAttribute="width" secondItem="CWb-ow-myY" secondAttribute="width" id="e8o-32-HLl"/>
+                <constraint firstAttribute="bottom" secondItem="3sH-Vc-pFa" secondAttribute="bottom" id="edi-gb-aIO"/>
+                <constraint firstItem="p3x-ma-Ld2" firstAttribute="width" secondItem="Ij1-79-Ivw" secondAttribute="width" id="gLq-8A-3r5"/>
+                <constraint firstItem="myu-5A-smB" firstAttribute="leading" secondItem="CWb-ow-myY" secondAttribute="trailing" id="iSn-gQ-Lx3"/>
+                <constraint firstItem="CWb-ow-myY" firstAttribute="bottom" secondItem="myu-5A-smB" secondAttribute="bottom" id="jHa-Ve-POv"/>
+                <constraint firstItem="CWb-ow-myY" firstAttribute="top" secondItem="myu-5A-smB" secondAttribute="top" id="jg5-W0-6dT"/>
+                <constraint firstItem="Ij1-79-Ivw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kqY-Nu-s35"/>
+                <constraint firstItem="myu-5A-smB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lvM-Op-Srp"/>
+                <constraint firstAttribute="trailing" secondItem="myu-5A-smB" secondAttribute="trailing" id="nJL-q6-2gl"/>
+                <constraint firstItem="x3X-8K-k45" firstAttribute="bottom" secondItem="CWb-ow-myY" secondAttribute="bottom" id="ncJ-fu-kf8"/>
+                <constraint firstAttribute="bottom" secondItem="myu-5A-smB" secondAttribute="bottom" id="pc2-bJ-gZV"/>
+                <constraint firstItem="x3X-8K-k45" firstAttribute="top" secondItem="CWb-ow-myY" secondAttribute="top" id="r1b-pG-eYQ"/>
+                <constraint firstItem="Ij1-79-Ivw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="sn9-od-xHb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="attachButton" destination="x3X-8K-k45" id="Fwb-F9-viW"/>
+                <outlet property="attributesButton" destination="CWb-ow-myY" id="hhx-AD-kQS"/>
+                <outlet property="hideButton" destination="myu-5A-smB" id="gBE-TY-dOh"/>
+                <outlet property="redoButton" destination="p3x-ma-Ld2" id="0Wv-8r-rTn"/>
+                <outlet property="undoButton" destination="Ij1-79-Ivw" id="nzI-BK-LKc"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="attach_icon_active" width="25" height="23"/>
+        <image name="hide_keyboard" width="48" height="37"/>
+        <image name="redo" width="22" height="23"/>
+        <image name="redo_active" width="22" height="23"/>
+        <image name="text_icon" width="29" height="19"/>
+        <image name="text_icon_active" width="29" height="19"/>
+        <image name="undo" width="22" height="23"/>
+        <image name="undo_active" width="22" height="23"/>
+    </resources>
+</document>

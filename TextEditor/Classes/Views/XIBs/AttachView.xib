@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view alpha="0.0" contentMode="scaleToFill" id="iN0-l3-epB" customClass="AttachView" customModule="TextEditor" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIh-RL-BzD">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mMk-hZ-TY3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="dark"/>
+                </visualEffectView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="kXN-fc-X7U">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="qaz-np-cgM"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="pgA-qH-gYv"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="gIh-RL-BzD" secondAttribute="trailing" id="1fR-Wc-157"/>
+                <constraint firstAttribute="bottom" secondItem="gIh-RL-BzD" secondAttribute="bottom" id="74G-no-92t"/>
+                <constraint firstAttribute="bottom" secondItem="kXN-fc-X7U" secondAttribute="bottom" id="7ia-Pq-9kc"/>
+                <constraint firstItem="kXN-fc-X7U" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QH1-gf-BY9"/>
+                <constraint firstItem="kXN-fc-X7U" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aeP-1K-wML"/>
+                <constraint firstAttribute="trailing" secondItem="kXN-fc-X7U" secondAttribute="trailing" id="eFV-56-CKT"/>
+                <constraint firstItem="gIh-RL-BzD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="uVn-FT-SR1"/>
+                <constraint firstItem="gIh-RL-BzD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uq6-B6-0bz"/>
+            </constraints>
+            <connections>
+                <outlet property="tableView" destination="kXN-fc-X7U" id="PZX-Xs-N0t"/>
+            </connections>
+        </view>
+    </objects>
+</document>
